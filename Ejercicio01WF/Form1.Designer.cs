@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             txbRuta = new TextBox();
             btnRuta = new Button();
@@ -36,7 +37,9 @@
             btnFiltrar = new Button();
             btnLimpiar = new Button();
             cmbArchivos = new ComboBox();
+            errorDatos = new ErrorProvider(components);
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorDatos).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -87,6 +90,7 @@
             lblListas.Name = "lblListas";
             lblListas.Size = new Size(336, 139);
             lblListas.TabIndex = 6;
+            lblListas.DoubleClick += MostrarArchivo;
             // 
             // btnFiltrar
             // 
@@ -96,6 +100,7 @@
             btnFiltrar.TabIndex = 4;
             btnFiltrar.Text = "Filtrar";
             btnFiltrar.UseVisualStyleBackColor = true;
+            btnFiltrar.Click += btnFiltrar_Click;
             // 
             // btnLimpiar
             // 
@@ -114,6 +119,10 @@
             cmbArchivos.Size = new Size(373, 23);
             cmbArchivos.TabIndex = 0;
             // 
+            // errorDatos
+            // 
+            errorDatos.ContainerControl = this;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -127,6 +136,7 @@
             Text = "Form1";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)errorDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -141,5 +151,6 @@
         private Button btnLimpiar;
         private ComboBox cmbArchivos;
         private ListBox lblListas;
+        private ErrorProvider errorDatos;
     }
 }
