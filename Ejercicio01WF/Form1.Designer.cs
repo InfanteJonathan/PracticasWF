@@ -64,6 +64,7 @@
             btnRuta.TabIndex = 2;
             btnRuta.Text = "...";
             btnRuta.UseVisualStyleBackColor = true;
+            btnRuta.Click += btnRuta_Click;
             // 
             // groupBox1
             // 

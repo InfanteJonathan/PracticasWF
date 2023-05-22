@@ -9,7 +9,7 @@ namespace Ejercicio01WF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<TipoArchivo> lArchivo = new List<TipoArchivo> 
+            List<TipoArchivo> lArchivo = new List<TipoArchivo>
             {
                 new TipoArchivo {extension= ".txt",nombreArchivo="Archivos txt"},
                 new TipoArchivo {extension= ".docx",nombreArchivo="Archivos word"},
@@ -21,6 +21,15 @@ namespace Ejercicio01WF
             cmbArchivos.ValueMember = "extension";
         }
 
-        
+        private void btnRuta_Click(object sender, EventArgs e)
+        {   
+            //seleccionar un directorio y mostrarlo en ventana
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog().Equals(DialogResult.OK))
+            {
+                txbRuta.Text = fbd.SelectedPath;
+                
+            }
+        }
     }
 }
